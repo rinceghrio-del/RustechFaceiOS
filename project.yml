@@ -1,0 +1,42 @@
+name: RustechFace
+options:
+  bundleIdPrefix: com.rustech
+  deploymentTarget:
+    iOS: "15.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    CODE_SIGNING_ALLOWED: "NO"
+    CODE_SIGNING_REQUIRED: "NO"
+    CODE_SIGN_IDENTITY: ""
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+targets:
+  RustechFace:
+    type: application
+    platform: iOS
+    sources:
+      - RustechFace
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.rustech.face
+        PRODUCT_NAME: RustechFace
+    info:
+      path: Config/Info.plist
+      properties:
+        CFBundleDisplayName: RUSTECH Face
+        UILaunchScreen: {}
+        UIRequiresFullScreen: true
+        UIStatusBarHidden: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSCameraUsageDescription: Ginagamit ang camera para makita ng robot ang mukha ng tao.
+        NSMicrophoneUsageDescription: Ginagamit ang mic para marinig ang mga voice command.
+        NSSpeechRecognitionUsageDescription: Ginagamit ang speech recognition para maintindihan ang mga utos mo.
+        NSLocalNetworkUsageDescription: Kailangan para makausap ang ESP32 robot sa WiFi network.
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
